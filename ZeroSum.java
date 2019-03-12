@@ -7,12 +7,12 @@ public class ZeroSum
 		Scanner stdin = new Scanner(System.in);
 	
 		int[] list = new int[5];
-		for (int i = 0; i < list.length, i++)
+		for (int i = 0; i < list.length; i++)
 		{
 			list[i] = stdin.nextInt();
 		}
 
-		System.out.println("The array " + (zeroSum(list))? "does ": "doesnt " + "have a subset which sums to zero"
+		System.out.println("The array has a subset which sums to zero: " + zeroSum(list));
 	}
 	
 	public static boolean zeroSum(int[] a)
@@ -22,12 +22,12 @@ public class ZeroSum
 
 	public static boolean helper(int[] a, int i, int sum)
 	{
-		if (i = 0)
+		if (i == 0)
 		{
 			return false;
 		}
 
-		if(sum-a[i-1] = 0)
+		if(sum-a[i-1] == 0)
 		{
 			return true;
 		}
@@ -37,6 +37,6 @@ public class ZeroSum
 			return helper(a,i-1,sum);
 		}
 
- 
+ 		return true;
 	}
 }
