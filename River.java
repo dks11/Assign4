@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.Scanner;
 public class River
 {
-	private static int sum = 0;
 	public static void main(String[] args)
 	{
 		Scanner stdin;
@@ -48,34 +47,29 @@ public class River
 	
 	private static int find0(int[][] list,int r,int c)
 	{
-		boolean done = false;
+		int sum = 1;
 		list[r][c] = 7;
-		
-		if( (r-1 >=0 && list[r-1][c] > 0) && (r+1 <= list.length && list[r+1][c] > 0) && (c-1 >= 0 && list[r][c-1] > 0)
-			&& (c+1 <= list[r].length && list[r][c+1] > 0) )
-		{
-			return sum + 1;
-		}
 	
 		if(r-1 >=0 && list[r-1][c] == 0)
 		{
-			return sum + River.find0(list, r-1, c);
+			sum += River.find0(list, r-1, c);
 		}
 	
 		if(r+1 <= list.length && list[r+1][c] == 0)
 		{
-			return sum + River.find0(list, r+1, c);
+			sum += River.find0(list, r+1, c);
 		}
 	
 		if(c-1 >= 0 && list[r][c-1] == 0)
 		{
-			return sum + River.find0(list, r, c-1);
+			sum += River.find0(list, r, c-1);
 		}
 	
 		if(c+1 <= list[r].length && list[r][c+1] == 0)
 		{
-			return sum + River.find0(list, r, c+1);
+			sum += River.find0(list, r, c+1);
 		}
+
 		return sum;
 	}
 }	
