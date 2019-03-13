@@ -36,6 +36,11 @@ public class ZeroSum
 		{
 			return helper(a,i-1,sum);
 		}
+		
+		if ( (i > 0) && (sum-a[i-1] != 0) )
+		{
+			return helper(a,i-1,sum - a[i-1]);
+		}
 
  		return true;
 	}
