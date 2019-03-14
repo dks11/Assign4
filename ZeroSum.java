@@ -27,18 +27,20 @@ public class ZeroSum
 			return false;
 		}
 
-		if(sum-a[i-1] == 0)
+		if(sum - a[i-1] == 0)
 		{
 			return true;
 		}
 
-		if ( (i > 0) && (sum-a[i-1] != 0) )
+		if ( (i > 0) && (sum - a[i-1] != 0) )
 		{
+			sum += a[i-1];
 			return helper(a,i-1,sum);
 		}
 		
 		if ( (i > 0) && (sum-a[i-1] != 0) )
 		{
+			sum += a[i-1];
 			return helper(a,i-1,sum - a[i-1]);
 		}
 
