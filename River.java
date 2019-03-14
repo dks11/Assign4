@@ -1,6 +1,11 @@
 import java.io.*;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+
+/**
+This class see the length of a river given a map, 1 being land, 0 being water
+@author Dakota Staples
+*/
 public class River
 {
 	public static void main(String[] args)
@@ -64,6 +69,13 @@ public class River
 		}
 	}
 	
+	/**
+	This finds a 0 and turns it to 7, also recursive
+	@param list The array to check(map)
+	@param r the row
+	@param c the column
+	@return The size of the river
+	*/
 	private static int find0(int[][] list,int r,int c)
 	{
 		int sum = 1;

@@ -1,4 +1,9 @@
 import java.util.Scanner;
+
+/**
+This class see if an array has a subset which sums to 0
+@author Dakota Staples
+ */
 public class ZeroSum
 {
 	public static void main(String[] args)
@@ -15,11 +20,23 @@ public class ZeroSum
 		System.out.println("The array has a subset which sums to zero: " + zeroSum(list));
 	}
 	
+	/**
+	This is the method which calls the helper method
+	@param a the array to check
+	@return whether it contains it or not
+	*/
 	public static boolean zeroSum(int[] a)
 	{
 		return helper(a, a.length, 0);
 	}
-
+	
+	/**
+	This is the method which checks whether it zero sums or not
+	@param a The array to check
+	@param i the length of the array and is used for subsetting
+	@param sum the sum each time
+	@return whether it zero sums or not
+	*/
 	public static boolean helper(int[] a, int i, int sum)
 	{
 		boolean bool1 = true; 
