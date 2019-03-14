@@ -8,10 +8,10 @@ public class ZeroSum
 {
 	public static void main(String[] args)
 	{
-		System.out.println("Please enter 3 integers");
+		System.out.println("Please enter 5 integers");
 		Scanner stdin = new Scanner(System.in);
 	
-		int[] list = new int[3];
+		int[] list = new int[5];
 		for (int i = 0; i < list.length; i++)
 		{
 			list[i] = stdin.nextInt();
@@ -54,8 +54,6 @@ public class ZeroSum
 
 		if ( (i > 0) && (sum - a[i-1] != 0) )
 		{
-			System.out.println("This is the sum " + (sum - a[i-1])  );
-
 			bool1 = helper(a,i-1,sum);
 			
 			if(bool1)
